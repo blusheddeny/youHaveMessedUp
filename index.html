@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="wrapper"></div>
+		<h1>YOU HAVE DONE MESSED UP</h1>
+
+		<form>
+			<label for="firstName"> First Name: </label>
+			<input id="firstName" type="text" placeholder="First Name">
+			
+			<label for="firstMiddle"> First Middle Name: </label>
+			<input id="firstMiddle" type="text" placeholder="First Middle Name">
+			
+			<label for="lastMiddle"> Last Middle Name: </label>
+			<input id="lastMiddle" type="text" placeholder="Last Middle Name">
+			
+			<label for="lastName"> Last Name: </label>
+			<input id="lastName" type="text" placeholder="Last name">
+			
+			<label for="undoneTask"> Undone task: </label>
+			<input id="undoneTask" type="text" placeholder="Enter Undone task">
+		</form>
+
+		<button id="yell" type="button" name="button">YELL</button>
+
+		<h2 id="placeToYell"></h2>
+
+    </div>
+<script>
+    //invoke trigger button and add smurf 
+document.querySelector('#yell').addEventListener('click', yell)
+//speak
+const synth = window.speechSynthesis;
+document.querySelector('#yell').addEventListener('click', yell)
+// create function
+function yell (){
+  //gather data from placeholders
+  const firstName = document.querySelector('#firstName').value
+  const firstMIddleName = document.querySelector('#firstMiddle').value
+  const lastMiddle = document.querySelector('#lastMiddle').value
+  const lastName = document.querySelector('#lastName').value
+  const undoneTask = document.querySelector('#undoneTask').value
+
+  const yellText = `${firstName} ${firstMIddleName} ${lastMiddle} ${lastName} ${undoneTask}`;
+  
+  document.querySelector('#placeToYell').innerText = yellText
+  let yellThis = new SpeechSynthesisUtterance(yellText);
+  synth.speak(yellThis);
+  document.body.style.backgroundImage =  "url('https://i.ibb.co/9pXZJbw/after.png')";
+  //Add what you should be doing - conditionals go here
+ // if(undoneTask.toUpperCase === "study".toUpperCase){
+ //   alert('you\'re so dead')
+  }
+</script>
+</body>
+</html>
