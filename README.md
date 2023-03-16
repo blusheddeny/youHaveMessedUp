@@ -1,10 +1,11 @@
 ## mini interactive game
 
-Scold yourself a small game interaticg through form and javascript 
+Scold yourself a small game.
 
 ### Programming languages
 
 Javascript
+- Speech text synthesis
 
 ### Styling
 
